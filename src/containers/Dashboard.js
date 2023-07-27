@@ -144,9 +144,9 @@ export default class {
         .html("")
       this.counter ++
     }
-
+    //On selectionne l'index en cours dans le DOM pour ouvrir le ticket, cela règle le bug d'affichage de ticket sur la dashboard
     bills.forEach(bill => {
-      $(`#open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
+      $(`#status-bills-container${this.index} #open-bill${bill.id}`).click((e) => this.handleEditTicket(e, bill, bills))
     })
 
     return bills
