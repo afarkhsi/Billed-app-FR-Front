@@ -44,15 +44,10 @@ describe("Given I am connected as an employee", () => {
   })
 })
 
-describe("Given : when i click to add a new bill", () => {
+describe("when i click to add a new bill", () => {
   test("Then : a modal shoul open", () => {
     Object.defineProperty(window, "localStorage", { value: localStorageMock });
-    window.localStorage.setItem(
-      "user",
-      JSON.stringify({
-        type: "Employee",
-      })
-    );
+    window.localStorage.setItem("user", JSON.stringify({type: "Employee",}));
 
     document.body.innerHTML = BillsUI({ data: [] });
     const onNavigate = (pathname) => {
@@ -73,7 +68,7 @@ describe("Given : when i click to add a new bill", () => {
   });
 })
 
-describe("Given : when i click on the icon button to see one bill", () => {
+describe("when i click on the icon button to see one bill", () => {
   test("Then : a modal should open", () => {
     document.body.innerHTML = BillsUI({ data: bills });
 
@@ -103,9 +98,9 @@ describe("Given : when i click on the icon button to see one bill", () => {
 
 
 // test d'intégration GET
-describe("Given I am a user connected as Employee", () => {
+describe("Given : I am a user connected as Employee", () => {
   describe("When I navigate to Bills home page", () => {
-    test("Then, fetches bills from mock API GET", async () => {
+    test("Then : fetches bills from mock API GET", async () => {
 
       localStorage.setItem("user", JSON.stringify({ type: "Employee", email: "a@a" }));
 

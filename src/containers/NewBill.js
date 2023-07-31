@@ -26,7 +26,7 @@ export default class NewBill {
     if (fileRegex.test(fileName)) {
       fileInput.classList.remove("invalid-file");
       errorMessage.classList.add("hidden");
-      errorMessage.style.display="none"
+      // errorMessage.style.display="none"
 
       const formData = new FormData();
       const email = JSON.parse(localStorage.getItem("user")).email;
@@ -51,7 +51,7 @@ export default class NewBill {
     } else {
       fileInput.classList.add("invalid-file");
       errorMessage.classList.remove("hidden");
-      errorMessage.style.display="block"
+      // errorMessage.style.display="block"
       fileInput.value = null;
     }
   };
