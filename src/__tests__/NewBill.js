@@ -13,6 +13,7 @@ import { bills } from "../fixtures/bills.js";
 import router from "../app/Router.js";
 import BillsUI from "../views/BillsUI.js";
 
+jest.mock("../app/store", () => mockStore)
 
 describe("Given I am connected as an employee", () => {
   describe("When I am on NewBill Page", () => {
